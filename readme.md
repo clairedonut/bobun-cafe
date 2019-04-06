@@ -41,3 +41,5 @@ For the scope of the project, I mainly wanted to keep the focus on practising Vu
 Animations are used to bring the website to life and strongly enhance the page's look and feel. These are triggered when content scrolls into view.
 
 I looked into different animation libraries such as AOS and Animate but preferred using here [Animista](http://animista.net/) because it doesn't rely on adding a bunch of attributes in the html tags and is easier to customise the delay and duration options. The second issue that had to be taken into consideration was triggering the animation when the content was scrolled into view and not on page load. To avoid this, I used a simple jquery based plugin.
+
+![preview of site](https://github.com/clairedonut/bobun-cafe/blob/master/bobuncafe-preview.png)
