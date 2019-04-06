@@ -4,365 +4,338 @@
 <!--[if IE 8]>         <html class="no-js lt-ie9" lang=""> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang=""> <!--<![endif]-->
 <head>
-  <meta charset="utf-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
-  <title></title>
-  <meta name="description" content="">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <link rel="apple-touch-icon" href="apple-touch-icon.png">
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <title></title>
+    <meta name="description" content="">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="apple-touch-icon" href="apple-touch-icon.png">
 
-  <!-- font awesome icons -->
-  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+    <!-- Stylesheets list -->
 
-  <!-- stylesheets -->
-  <link rel="stylesheet" href="css/reset.css">
-  <link rel="stylesheet" href="css/grid/simple-grid.css">
+    <!-- icons font awesome  -->
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
 
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.0/animate.min.css">
+    <!-- Grid system -->
+    <link rel="stylesheet" href="css/reset.css">
+    <link rel="stylesheet" href="css/grid/simple-grid.css">
 
+    <!-- Animations Library -->
+    <link rel="stylesheet" href="css/animista/animista.css">
+    <link rel="stylesheet" href="css/animista/keyframes.css">
 
+    <!-- Custom Styling : includes vendor prefixes -->
+    <link rel="stylesheet" href="css/styles.css">
 
-  <!-- Animate On Scroll Library -->
-
-  <!-- <link rel="stylesheet" href="scss/animista.css"> -->
-  <link rel="stylesheet" href="css/animista/animista.css">
-  <link rel="stylesheet" href="css/animista/keyframes.css">
-
-  <link rel="https://cdnjs.cloudflare.com/ajax/libs/kissui.scrollanim/0.3.0/scrollanim.min.css">
-  <!-- <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" /> -->
-
-
-
-  <!-- bootstrap-grid stylesheet -->
-  <!-- <link rel="stylesheet" href="css/bootstrap-grid.css"> -->
-
-  <!-- <link rel="stylesheet" href="css/normalize.min.css"> -->
-  <!-- <link rel="stylesheet" href="css/main.css"> -->
-
-
-
-
-  <link rel="stylesheet" href="scss/styles.css">
-
-  <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
+    <script src="js/vendor/modernizr-2.8.3-respond-1.4.2.min.js"></script>
 </head>
 <body>
-  <!--[if lt IE 8]>
-  <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
-  <![endif]-->
+    <!--[if lt IE 8]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
+    <![endif]-->
 
-  <div id="app" class="">
 
-    <h1 class="brand"> {{ brand }} </h1>
+    <!-- header - nav only for formats medium and up  ------------------------------>
 
-  <div id="show-modal" @click="showModal = true">
-    <i class="fas fa-bars fa-lg"></i>
-  </div>
-  <!-- use the modal component, pass in the prop -->
-  <modal v-if="showModal" @close="showModal = false">
+    <header class="row">
 
-    <!--
-      you can use custom content here to overwrite
-      default content
-    -->
-    <h3 slot="header">custom header</h3>
-  </modal>
-</div>
+        <!-- navigation menu -->
+        <nav class="col-12">
+            <h1 class="brand">{{ brand }}</h1>
 
-  <!-- header ------------------------------------------->
+            <div class="">
+                <a v-for="nav in navs" class="" :href="nav.link" v-smooth-scroll="{ duration: 1000 }"> {{ nav.name }}</a>
+            </div>
 
-  <header class="row">
+        </nav>
+    </header>
 
-    <!-- navigation menu -->
-    <nav class="col-12">
-      <h1 class="brand">{{ brand }}</h1>
-    <!-- Tablet and up  -->
-    <div class="">
-      <a v-for="nav in navs" class="" :href="nav.link" v-smooth-scroll="{ duration: 1000 }"> {{ nav.name }}</a>
-    </div>
+    <!-- Nav visible only for format mobile / small and down  ------------------------>
+    <div id="app" class="">
 
-</nav>
-</header>
-
-<!-- main content ------------------------------------------->
-<main>
-
-  <!-- banner ------------------------------------------->
-
-  <section id="banner" class="row">
-    <!-- <img :src="banner" class="img-fluid" alt="asian food"> -->
-    <div class="">
-      <aside class="">
         <h1 class="brand"> {{ brand }} </h1>
-        <p> {{ welcome_message }} </p>
-      </aside>
+
+        <div id="show-modal" @click="showModal = true">
+            <i class="fas fa-bars fa-lg"></i>
+        </div>
+
+        <!-- use the modal component, pass in the prop -->
+        <modal v-if="showModal" @close="showModal = false">
+        </modal>
     </div>
 
-  </section>
+    <!-- main content ------------------------------------------->
+    <main>
 
-  <!-- about us ------------------------------------------->
 
-  <section id="about" class="container">
-    <!-- <div class="row" data-aos="fade-in" data-aos-offset="200" data-aos-delay="50" data-aos-duration="1000" data-aos-easing="ease-in-out" data-aos-mirror="true" data-aos-once="false"> -->
 
-    <!-- <div class="row">
 
-    <div class="col-6 col-12-sm">
-    <img :src="image" class="img-fluid" alt="$alt">
-  </div>
+        <!-- banner ------------------------------------------->
 
-  <div class="col-6 col-12-sm">
-  <h2>{{title}}</h2>
-  <p> {{ description }} </p>
-</div>
-</div> -->
+        <section id="banner" class="row">
 
-<div class="row" style="visibility: hidden;">
-
-  <div class="col-6 col-12-sm scroll1">
-
-    <div class="border-image">
-      <img :src="image" class="img-fluid" alt="$alt">
-
-    </div>
-  </div>
-
-  <div class="col-6 col-12-sm scroll2">
-    <div class="">
-      <h2  class="">{{title}}</h2>
-      <div class="border-title"></div>
-    </div>
-    <p class=""> {{ description }} </p>
-  </div>
-</div>
-
-</section>
-
-<!-- carousel images ------------------------------------------->
-
-<section id="carousel">
-  <carousel :data="data" :controls="true" :indicators="true" :interval="3000"></carousel>
-</section>
-
-<!-- drinks & meal menu ------------------------------------------->
-
-<section id="menu" class="row">
-
-  <div class="my-3 main-title scroll">
-    <div>
-      <i class="fas fa-angle-double-down fa-5x"></i>
-    </div>
-
-    <h2> {{ title }} </h2>
-  </div>
-
-  <!-- dietary_restrictions ------------------>
-
-  <aside class="">
-    <div class="dietary_restriction" v-for="dietary_restriction in dietary_restrictions">
-      <div :id="dietary_restriction.symbol">
-        <p> {{ dietary_restriction.marker }} </p>
-      </div>
-      <i :class="dietary_restriction.icon"></i>
-      <p> {{ dietary_restriction.name }} </p>
-    </div>
-  </aside>
-
-  <!-- meal menu ------------------>
-
-  <div class="col-sm-12 col-8">
-    <table class="scroll-left" v-for="menu in menus">
-      <thead>
-        <tr>
-          <th colspan="1">
-            <h3> {{ menu.meal }} </h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody v-for="dish in menu.dishes">
-        <tr>
-          <td>
-            <p class="title text"> {{ dish.name }} -  {{ dish.price }} € </p>
-
-            <div v-if=" dish.gluten_free === 1" id="circle"><p>GF</p>
+            <div class="">
+                <aside class="">
+                    <h1 class="brand"> {{ brand }} </h1>
+                    <p> {{ welcome_message }} </p>
+                </aside>
             </div>
 
-            <div v-if=" dish.vegan === 1" id="circle"><p>V</p>
+        </section>
+
+
+
+
+        <!-- about us ------------------------------------------->
+
+        <section id="about" class="container">
+
+            <div class="row" style="visibility: hidden;">
+
+                <div class="col-6 col-12-sm scroll1">
+
+                    <div class="border-image">
+                        <img :src="image" class="img-fluid" alt="$alt">
+
+                    </div>
+                </div>
+
+                <div class="col-6 col-12-sm scroll2">
+                    <div class="">
+                        <h2  class="">{{title}}</h2>
+                        <div class="border-title"></div>
+                    </div>
+                    <p class=""> {{ description }} </p>
+                </div>
             </div>
 
-            <i v-if=" dish.spicy === 1" class="fas fa-fire"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p class="text"> {{ dish.text }} </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-
-  <!-- drinks list ------------------>
-
-  <div class="col-sm-12 col-4">
-    <table class="scroll-right">
-      <thead>
-        <tr>
-          <th colspan="1">
-            <h3 class=""> Drinks </h3>
-          </th>
-        </tr>
-      </thead>
-      <tbody  v-for="drink in drinks">
-        <tr>
-          <td>
-            <p class="title text"> {{ drink.name }} -  {{ drink.price }} €  </p>
-            <i v-if=" drink.alcohol === 1" class="fas fa-asterisk"></i>
-          </td>
-        </tr>
-        <tr>
-          <td>
-            <p class="text"> {{ drink.text }} </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-
-    <div id="drinks_disclaimer" class="">
-      <i class="fas fa-asterisk"></i>
-      <p><i>beverage contains alcohol</i></p>
-    </div>
-  </div>
-
-
-</section>
-
-<!-- image gallery ------------------------------------------->
-
-
-<section id="gallery" class="">
-  <div v-for="image in images">
-    <img :src="image">
-  </div>
-</section>
-
-
-<!-- location & contact ------------------------------------------->
-
-<section id="contact" class="">
-
-  <h2> {{ title }} </h2>
-
-  <!-- google maps -->
-
-  <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2213276724824!2d-73.97074308551538!3d40.75715654279033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258e376ec7dfd%3A0xecd80e1963897d6e!2s222+E+53rd+St%2C+New+York%2C+NY+10022%2C+USA!5e0!3m2!1sen!2sfr!4v1552588169384" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
-
-
-  <!-- contact & location information -->
-
-  <div class="row">
-    <table v-for="detail_info in detail_infos" class="col-sm-12 col-4">
-      <thead>
-        <tr>
-          <th colspan="2">
-            <h4> {{ detail_info.title }} </h4>
-          </th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="detail in detail_info.details">
-          <td>
-            <i :class=" detail.icon "></i>
-          </td>
-          <td>
-            <p> {{ detail.info }} </p>
-          </td>
-        </tr>
-      </tbody>
-    </table>
-  </div>
-
-</section>
-
-</main>
-
-<!-- footer ------------------------------------------->
-
-<footer class="row">
-  <section class="col-12">
-
-    <div class="">
-      <a v-for="brand in brand" :class=" brand.class " :href="brand.link"> {{ brand.name }} </a>
-    </div>
-
-    <div class="links">
-      <a v-for="nav in navs" :class=" nav.class " :href="nav.link"> {{ nav.name }} </a>
-    </div>
-
-    <div class="social">
-      <a v-for="social in social" :href="social.link">
-        <i v-bind:class="social.icon"></i>
-      </a>
-    </div>
-  </section>
-</footer>
-
-
-<!-- template for the modal component -->
-<script type="text/x-template" id="modal-template">
-  <transition name="modal">
-
-    <div class="modal-mask">
-
-      <div @click="$emit('close')" class="icon">
-        <i class="fas fa-times fa-2x"></i>
-      </div>
-
-      <div class="nav">
-        <a v-for="nav in navs" class="" :href="nav.link" v-smooth-scroll="{ duration: 1000 }"> {{ nav.name }}</a>
-      </div>
-
-    </div>
-  </transition>
-</script>
-
-
-<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
-<script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
-
-<script src="js/waypoints.min.js"></script>
-
-
-<!-- VueJS : production version, optimized for size and speed -->
-<!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
-<script src="//unpkg.com/vue/dist/vue.js"></script>
-
-
-<!-- Plugins / Librairies -->
-<script src="js/vue-carousel.js"></script>
-
-<script src="https://unpkg.com/vue2-smooth-scroll"></script>
+        </section>
 
 
 
-<!-- <script src="https://unpkg.com/scrollreveal"></script>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/kissui.scrollanim/0.3.0/scrollanim.min.js"></script>
--->
-<!-- <script src="js/aos.js"></script> -->
+        <!-- carousel images ------------------------------------------->
+
+        <section id="carousel">
+            <carousel :data="data" :controls="true" :indicators="true" :interval="3000"></carousel>
+        </section>
 
 
-<script src="js/main.js"></script>
 
 
-<!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
-<script>
-(function(b,o,i,l,e,r){b.GoogleAnalyticsObject=l;b[l]||(b[l]=
-  function(){(b[l].q=b[l].q||[]).push(arguments)});b[l].l=+new Date;
-  e=o.createElement(i);r=o.getElementsByTagName(i)[0];
-  e.src='//www.google-analytics.com/analytics.js';
-  r.parentNode.insertBefore(e,r)}(window,document,'script','ga'));
-  ga('create','UA-XXXXX-X','auto');ga('send','pageview');
-  </script>
+        <!-- drinks & meal menu ------------------------------------------->
+
+        <section id="menu" class="row">
+
+            <div class="my-3 main-title scroll">
+                <div>
+                    <i class="fas fa-angle-double-down fa-5x"></i>
+                </div>
+
+                <h2> {{ title }} </h2>
+            </div>
+
+            <!-- dietary_restrictions ------------------>
+
+            <aside class="">
+                <div class="dietary_restriction" v-for="dietary_restriction in dietary_restrictions">
+                    <div :id="dietary_restriction.symbol">
+                        <p> {{ dietary_restriction.marker }} </p>
+                    </div>
+                    <i :class="dietary_restriction.icon"></i>
+                    <p> {{ dietary_restriction.name }} </p>
+                </div>
+            </aside>
+
+            <!-- meal menu ------------------>
+
+            <div class="col-sm-12 col-8">
+                <table class="scroll-left" v-for="menu in menus">
+                    <thead>
+                        <tr>
+                            <th colspan="1">
+                                <h3> {{ menu.meal }} </h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody v-for="dish in menu.dishes">
+                        <tr>
+                            <td>
+                                <p class="title text"> {{ dish.name }} -  {{ dish.price }} € </p>
+
+                                <div v-if=" dish.gluten_free === 1" id="circle"><p>GF</p>
+                                </div>
+
+                                <div v-if=" dish.vegan === 1" id="circle"><p>V</p>
+                                </div>
+
+                                <i v-if=" dish.spicy === 1" class="fas fa-fire"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="text"> {{ dish.text }} </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+
+            <!-- drinks list ------------------>
+
+            <div class="col-sm-12 col-4">
+                <table class="scroll-right">
+                    <thead>
+                        <tr>
+                            <th colspan="1">
+                                <h3 class=""> Drinks </h3>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody  v-for="drink in drinks">
+                        <tr>
+                            <td>
+                                <p class="title text"> {{ drink.name }} -  {{ drink.price }} €  </p>
+                                <i v-if=" drink.alcohol === 1" class="fas fa-asterisk"></i>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>
+                                <p class="text"> {{ drink.text }} </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+
+                <div id="drinks_disclaimer" class="">
+                    <i class="fas fa-asterisk"></i>
+                    <p><i>beverage contains alcohol</i></p>
+                </div>
+            </div>
+
+
+        </section>
+
+
+
+
+        <!-- image gallery ------------------------------------------->
+
+
+        <section id="gallery" class="">
+            <div v-for="image in images">
+                <img :src="image">
+            </div>
+        </section>
+
+
+
+
+        <!-- location & contact ------------------------------------------->
+
+        <section id="contact" class="">
+
+            <h2> {{ title }} </h2>
+
+            <!-- google maps -->
+
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3022.2213276724824!2d-73.97074308551538!3d40.75715654279033!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x89c258e376ec7dfd%3A0xecd80e1963897d6e!2s222+E+53rd+St%2C+New+York%2C+NY+10022%2C+USA!5e0!3m2!1sen!2sfr!4v1552588169384" width="100%" height="350" frameborder="0" style="border:0" allowfullscreen></iframe>
+
+
+            <!-- contact & location information -->
+
+            <div class="row">
+                <table v-for="detail_info in detail_infos" class="col-sm-12 col-4">
+                    <thead>
+                        <tr>
+                            <th colspan="2">
+                                <h4> {{ detail_info.title }} </h4>
+                            </th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr v-for="detail in detail_info.details">
+                            <td>
+                                <i :class=" detail.icon "></i>
+                            </td>
+                            <td>
+                                <p> {{ detail.info }} </p>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+
+    </main>
+
+
+
+
+    <!-- footer ------------------------------------------->
+
+    <footer class="row">
+        <section class="col-12">
+
+            <div class="">
+                <a v-for="brand in brand" :class=" brand.class " :href="brand.link"> {{ brand.name }} </a>
+            </div>
+
+            <div class="links">
+                <a v-for="nav in navs" :class=" nav.class " :href="nav.link"> {{ nav.name }} </a>
+            </div>
+
+            <div class="social">
+                <a v-for="social in social" :href="social.link">
+                    <i v-bind:class="social.icon"></i>
+                </a>
+            </div>
+        </section>
+    </footer>
+
+
+
+
+
+    <!-- template for the modal component -->
+    <script type="text/x-template" id="modal-template">
+        <transition name="modal">
+
+            <div class="modal-mask">
+
+                <div @click="$emit('close')" class="icon">
+                    <i class="fas fa-times fa-2x"></i>
+                </div>
+
+                <div class="nav">
+                    <a v-for="nav in navs" class="" :href="nav.link" v-smooth-scroll="{ duration: 1000 }"> {{ nav.name }}</a>
+                </div>
+
+            </div>
+        </transition>
+    </script>
+
+
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.2/jquery.min.js"></script>
+    <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.11.2.min.js"><\/script>')</script>
+
+    <script src="js/waypoints.min.js"></script>
+
+
+    <!-- VueJS : production version, optimized for size and speed -->
+    <!-- <script src="https://cdn.jsdelivr.net/npm/vue"></script> -->
+    <script src="//unpkg.com/vue/dist/vue.js"></script>
+
+
+    <!-- Plugins / Librairies -->
+    <script src="js/vue-carousel.js"></script>
+    <script src="https://unpkg.com/vue2-smooth-scroll"></script>
+
+    <script src="js/main.js"></script>
+
+
+    <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+
 </body>
 </html>

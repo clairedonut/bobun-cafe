@@ -95,16 +95,16 @@ $max-break-medium: "only screen and (max-width : 899px)";
   background-size: cover;
 }
 
-/* properties */
+/* global properties */
 
 .img-fluid {
   width: 100%;
   height: auto;
 }
 
-.d-flex {
-  @include flex-row(flex-start, center);
-}
+// .d-flex {
+//   @include flex-row(flex-start, center);
+// }
 
 
 /* ------- fonts  ------------------------------------------ */
@@ -131,9 +131,9 @@ h2 {
 }
 
 a {
-  @include hyperlink(pink);
+  @include hyperlink(black);
   &:hover {
-    color: rgb(97, 182, 144)
+    color: #d35400;
   }
 }
 
@@ -141,7 +141,7 @@ a {
   margin: auto 3em;
 }
 
-/* ------- header  ------------------------------------------ */
+/* ------- header (medium and large formats) ------------------------------------------ */
 
 header {
 
@@ -238,7 +238,6 @@ header {
     div {
       @include flex-column (center, center);
       margin: 2em auto;
-      // height: 500px;
       text-align: center;
 
       @media #{$min-break-medium} {
@@ -252,7 +251,6 @@ header {
         font-family: $nav-fontfamily;
       }
       img {
-        // margin: 2em auto;
         max-width: 250px;
         max-height: auto;
       }
@@ -271,16 +269,6 @@ header {
   .border-image {
     border: 15px solid $about-border;
     padding: 2em;
-
-    // margin: 2em;
-
-    // position: absolute;
-    // right: 70px;
-    // bottom: 320px;
-    //
-    // min-width: 250px;
-    // min-height: 300px;
-
     z-index: -100;
   }
 }
@@ -433,13 +421,10 @@ header {
 
 .graphic-title {
   border: 6px solid #000;
-  // padding: 20px 35px;
-  // font-family: Din Condensed Bold;
-  // font-size: 72px;
+
   letter-spacing: 2px;
   text-transform: uppercase;
   color: #000;
-  // margin: 0;
   line-height: 100%;
   position: relative;
   transition: all .5s ease;
@@ -509,11 +494,6 @@ footer {
       @media #{$max-break-small} {
         @include flex-column(center, center);
       }
-      // .brand {
-      // 	@media #{$min-break-medium} {
-      // 		margin-right: 10em;
-      // 	}
-      // }
     }
     .social {
       @include flex-row(center, flex-start);
@@ -540,6 +520,10 @@ footer {
   }
 
 }
+
+
+/* ------- image gallery with zoom on hover  ------- */
+
 
 #gallery {
   @include flex-row(flex-start, center);
@@ -590,83 +574,7 @@ footer {
   }
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-// .img-hover-zoom {
-//   transition: transform .5s ease;
-// }
-//
-// .img-hover-zoom:hover {
-//   transform: scale(1.5);
-// }
-
-
-
-
-
-/* [2] Transition property for smooth transformation of images */
-// .img-hover-zoom img {
-//   transition: transform .5s ease;
-// }
-//
-// /* [3] Finally, transforming the image when container gets hovered */
-// .img-hover-zoom:hover img {
-//   transform: scale(1.5);
-// }
-//
-
-// #slider {
-//   background: purple;
-//   height: 700px;
-//   overflow: hidden;
-//   image-slider {
-//     @include flex-column(center,center);
-//   }
-//   img {
-//     width: 60%;
-//     height: auto;
-//   }
-// }
-// .fade-enter-active, .fade-leave-active {
-//   transition: all 0.8s ease;
-//   overflow: hidden;
-//   visibility: visible;
-//   opacity: 1;
-//   position: absolute;
-// }
-// .fade-enter, .fade-leave-to {
-//   opacity: 0;
-//   visibility: hidden;
-// }
-//
-//   .carousel {
-//     align-items: center;
-//     background-color: #666;
-//     color: #999;
-//     display: flex;
-//     font-size: 1.5rem;
-//     justify-content: center;
-//     min-height: 10rem;
-//   }
+/* ------- nav for mobile and small formats  ------- */
 
 
 #app {

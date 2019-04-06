@@ -3,17 +3,10 @@
 @import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900");
 /* custom variables */
 /* custom mixins */
-/* properties */
+/* global properties */
 .img-fluid {
   width: 100%;
   height: auto;
-}
-
-.d-flex {
-  display: flex;
-  flex-direction: row;
-  justify-content: flex-start;
-  align-items: center;
 }
 
 /* ------- fonts  ------------------------------------------ */
@@ -33,17 +26,17 @@ h2 {
 a {
   /* a href styles formatting */
   text-decoration: none;
-  color: pink;
+  color: black;
 }
 a:hover {
-  color: #61b690;
+  color: #d35400;
 }
 
 .my-3 {
   margin: auto 3em;
 }
 
-/* ------- header  ------------------------------------------ */
+/* ------- header (medium and large formats) ------------------------------------------ */
 @media only screen and (max-width: 577px) {
   header {
     display: none;
@@ -435,6 +428,7 @@ footer section a {
   }
 }
 
+/* ------- image gallery with zoom on hover  ------- */
 #gallery {
   display: flex;
   flex-direction: row;
@@ -491,7 +485,7 @@ footer section a {
   }
 }
 
-/* [2] Transition property for smooth transformation of images */
+/* ------- nav for mobile and small formats  ------- */
 #app {
   background: white;
   display: flex;
