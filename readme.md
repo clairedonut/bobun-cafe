@@ -1,6 +1,6 @@
 # Showcase site for a fictive restaurant 'Bobún Café'
 
-`vue`, `sass`, `jquery`, `grid based system`, `plugins`
+`vue` `sass` `jquery` `grid based system` `plugins`
 
 
 This is a single page website for the fictive 'Bobún Café' . It contains an 'about us' section, 'menu' section, 'contact' section and images under various forms (such as a carousel).
@@ -15,7 +15,7 @@ The main focus of this project was to practice Vue.js
 # Key elements in project
 
 
-## Vue
+## Vue.js
 
 * **List Rendering** : The `v-for` directive to render list of items and nested data. Used on the whole site (such as listing all the menu items, all the contact information etc). Keeps the html structure as simple as possible as it prevents repeating code.
 
