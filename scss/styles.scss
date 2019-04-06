@@ -1,0 +1,740 @@
+/* fonts */
+
+@import url('https://fonts.googleapis.com/css?family=Special+Elite');
+@import url('https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900');
+
+
+/* custom variables */
+
+$brand-fontfamily: 'Special Elite', cursive;
+$brand-color: #c23616;
+
+$nav-fontfamily: 'Montserrat', sans-serif;
+
+$banner-image: '../img/banner-cover.jpg';
+
+
+$about-border: #874000;
+
+$menu-bck: #DDF1D8;
+$menu_restrictions-bck: #C7E2C1;
+$menu-font_title: 'Special Elite', cursive;
+
+$contact-bck: #F7F8BC;
+$contact-color: black;
+
+$footer-bck: #F0F7F4;
+$footer-color: #32292F;
+
+
+
+// ----- media queries:
+$min-break-small: "only screen and (min-width : 576px)";
+$min-break-medium: "only screen and (min-width : 577px)";
+$min-break-large: "only screen and (min-width : 900px)";
+$min-break-xlarge: "only screen and (min-width : 1200px)";
+
+$max-break-small: "only screen and (max-width : 577px)";
+$max-break-medium: "only screen and (max-width : 899px)";
+
+
+
+
+/* custom mixins */
+
+// mixins
+
+@mixin flex-row($horizontal,$vertical) {
+  display: flex;
+  flex-direction: row;
+  justify-content: $horizontal;
+  align-items: $vertical;
+}
+
+@mixin flex-column($horizontal,$vertical) {
+  display: flex;
+  flex-direction: column;
+  align-items: $horizontal;
+  justify-content: $vertical;
+}
+
+@mixin bullet-style {  /* li styles : remove bullet-points */
+  list-style-type: none;
+  padding: 0;
+  margin: 0;
+}
+
+@mixin hyperlink($color) { /* a href styles formatting */
+  text-decoration: none;
+  color: $color;
+}
+
+@mixin width($columns) { /* format card grid size */
+  width: calc(100% / $columns);
+}
+
+@mixin background($url, $size, $repeat, $position) { /* background images */
+  background-image: url($url);
+  background-size: $size;
+  background-repeat: $repeat;
+  background-position: $position;
+}
+
+@mixin parallax ($url, $height) {
+
+  /* Image used */
+  background-image: url($url);
+
+  /* Set a specific height */
+  height: $height;
+
+  /* To create the parallax scrolling effect */
+  background-attachment: fixed;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+/* properties */
+
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.d-flex {
+  @include flex-row(flex-start, center);
+}
+
+
+/* ------- fonts  ------------------------------------------ */
+
+.brand {
+  font-family: $brand-fontfamily;
+  color: $brand-color;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3em;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: $brand-fontfamily;
+}
+
+// /* ------- applicable to whole body  ------------------------------------------ */
+
+
+* {
+  // border: 1px dotted blue;
+  // background-color: red;
+}
+
+a {
+  @include hyperlink(pink);
+  &:hover {
+    color: rgb(97, 182, 144)
+  }
+}
+
+.my-3 {
+  margin: auto 3em;
+}
+
+/* ------- header  ------------------------------------------ */
+
+header {
+
+  @media #{$max-break-small} {
+    display: none;
+  }
+
+  nav {
+    @include flex-row (space-between, center);
+    padding: 0.5em;
+
+
+    @media #{$max-break-small} {
+      @include flex-row (center, center);
+      padding: 0;
+
+    }
+    h1 {
+      margin: 0;
+      font-size: 2em;
+
+      @media #{$max-break-small} {
+        font-size: 1.1em;
+      }
+    }
+    div {
+      @include flex-row (center, center);
+      a {
+        @include hyperlink(black);
+        padding: 0 1em;
+        font-family: $nav-fontfamily;
+
+        text-transform: uppercase;
+        letter-spacing: 2px;
+        text-align: center;
+        font-weight: 600;
+      }
+    }
+  }
+}
+
+
+
+/* ------- main  ------------------------------------------ */
+
+/* ------- #banner  ------- */
+
+#banner {
+  color: white;
+  text-align: center;
+  div {
+    @include flex-column (center, center);
+    @include background($banner-image, cover, no-repeat, center);
+    min-height: 500px;
+
+    aside {
+      background-color: rgba(#361900, 0.8);
+      min-height: 500px;
+      width: 100%;
+      @include flex-column (center, center);
+    }
+
+    h1 {
+
+      font-size: 6em;
+      text-shadow: 0px 2px 2px #000000;
+      margin: 0;
+
+      @media #{$min-break-medium} {
+        font-size: 8em;
+      }
+
+      @media #{$min-break-large} {
+        font-size: 10em;
+      }
+    }
+    p {
+      font-family: $brand-fontfamily;
+      font-size: 3em;
+      margin: 0;
+      font-weight: bold;
+      color: #ff793f;
+      text-shadow: 0px 2px 2px #000000;
+
+    }
+  }
+}
+
+/* ------- #about  ------- */
+
+#about {
+  div {
+    margin: 4em 0;
+    div {
+      @include flex-column (center, center);
+      margin: 2em auto;
+      // height: 500px;
+      text-align: center;
+
+      @media #{$min-break-medium} {
+        @include flex-column (space-around, center);
+      }
+      h2 {
+        margin: 0;
+      }
+      p {
+        margin: 0;
+        font-family: $nav-fontfamily;
+      }
+      img {
+        // margin: 2em auto;
+        max-width: 250px;
+        max-height: auto;
+      }
+    }
+  }
+  .border-title {
+    background: $about-border;
+    z-index: -5;
+    height: 1em;
+    width: 300px;
+
+    position: relative;
+    bottom: 55px;
+  }
+
+  .border-image {
+    border: 15px solid $about-border;
+    padding: 2em;
+
+    // margin: 2em;
+
+    // position: absolute;
+    // right: 70px;
+    // bottom: 320px;
+    //
+    // min-width: 250px;
+    // min-height: 300px;
+
+    z-index: -100;
+  }
+}
+
+/* ------- #carousel  ------- */
+
+#carousel {
+  @media #{$min-break-large} {
+    width: 80%;
+    margin: 5em auto;
+  }
+}
+
+/* ------- #menu  ------- */
+
+#menu {
+  background-color: $menu-bck;
+  padding: 2em 0;
+  .main-title {
+    @include flex-row(flex-start, center);
+    padding: 1em 0;
+    i {
+      margin-right: 0.5em;
+    }
+  }
+
+  h2 {
+    font-size: 7em;
+    @media #{$max-break-small} {
+      font-size: 5.5em;
+    }
+  }
+
+  /* -- dietary_restrictions -- */
+
+  aside {
+    @include flex-row(flex-end, center);
+    background-color: $menu_restrictions-bck;
+    padding: 3em 2em;
+    margin-bottom: 2em;
+    @media #{$max-break-small} {
+      @include flex-row(center,center);
+    }
+
+    .dietary_restriction {
+      @include flex-row(center,center);
+
+      i {
+        color: red;
+      }
+      p {
+        margin: 0 1em;
+        text-transform: uppercase;
+        font-weight: 800;
+        font-size: 11px;
+      }
+    }
+    .dietary_restriction:nth-child(2) {
+      padding: 0 1em;
+      border-left: 2px solid black;
+      border-right: 2px solid black;
+    }
+  }
+
+  /* -- icon : gluten free & vegan -- */
+
+  #circle {
+    width: 20px;
+    height: 20px;
+    -webkit-border-radius: 25px;
+    -moz-border-radius: 25px;
+    border-radius: 25px;
+    background: blue;
+    @include flex-row(center, center);
+
+    margin: 0 5px;
+    p {
+      text-align: center;
+      font-size: 10px;
+      font-weight: 900;
+      color: white;
+      width: 100%;
+    }
+  }
+
+  /* -- icon : spicy -- */
+
+  .fas.fa-fire {
+    color: red;
+    margin: 0 10px;
+  }
+
+  /* -- icon : alcohol -- */
+
+  .fas.fa-asterisk {
+    color: green;
+  }
+
+  /* -- list of meals and drinks -- */
+
+  table {
+    th {
+      padding-top: 2em;
+      h3 {
+        font-family: $menu-font_title;
+        font-size: 1.5em;
+        text-align: left;
+        text-transform: uppercase;
+        padding-bottom: 1em;
+        border-bottom: 3px solid darkgrey;
+        max-width: 250px;
+      }
+    }
+    td {
+      // dietary_restriction icons on the same line
+      @include flex-row(flex-start, center);
+      .title {
+        font-weight: 600;
+      }
+      .text {
+        font-size: 16px;
+      }
+      p {
+        margin: 0.5em 1em ;
+      }
+    }
+  }
+
+  #drinks_disclaimer {
+    @include flex-row(flex-start, center);
+    p {
+      font-size: 14px;
+      margin-left: 10px;
+    }
+  }
+
+} // END #menu
+
+
+
+
+// obsolete
+
+
+.tilt-right {
+  transform: rotate(5deg);
+  position: absolute;
+  bottom: 50px; // height of h3
+}
+
+.graphic-title {
+  border: 6px solid #000;
+  // padding: 20px 35px;
+  // font-family: Din Condensed Bold;
+  // font-size: 72px;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  // margin: 0;
+  line-height: 100%;
+  position: relative;
+  transition: all .5s ease;
+  transition-delay: 1s;
+}
+
+
+
+/* ------- #contact  ------- */
+
+#contact {
+
+  background: $contact-bck;
+  padding: 5em 0;
+
+  h2 {
+    padding: 1em 0.5em;
+    color: $contact-color;
+    font-size: 3em;
+    line-height: 0.9em;
+    font-weight: 400;
+  }
+  iframe {
+    margin: 3em 0;
+  }
+
+
+  table {
+    td:nth-child(2) {
+      width:90%;
+    }
+    th, td, tr {
+
+      h4 {
+        text-align: left;
+        padding: 1.5em 0;
+        border-bottom: 2px solid grey;
+        width: 30%;
+      }
+      p {
+        margin: 0.5em;
+      }
+      h4, p {
+        font-size: 0.9em;
+      }
+
+    }
+
+  }
+}
+
+/* ------- footer  ------------------------------------------ */
+
+footer {
+  background-color: $footer-bck;
+  color: $footer-color;
+  font-family: $nav-fontfamily;
+  padding: 1em 0;
+
+  section {
+    @include flex-row(space-between, flex-start);
+    @media #{$max-break-small} {
+      @include flex-column(center, center);
+    }
+    div {
+      @include flex-row(space-between, flex-start);
+      @media #{$max-break-small} {
+        @include flex-column(center, center);
+      }
+      // .brand {
+      // 	@media #{$min-break-medium} {
+      // 		margin-right: 10em;
+      // 	}
+      // }
+    }
+    .social {
+      @include flex-row(center, flex-start);
+    }
+    a {
+      font-family: $nav-fontfamily;
+      color: $footer-color;
+      margin: 0 1em;
+
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      font-weight: bold;
+
+      @media #{$max-break-small} {
+        margin: 2em 0;
+      }
+      i {
+        @media #{$max-break-small} {
+          margin: 0.5em 30px;
+        }
+      }
+    }
+  }
+
+}
+
+#gallery {
+  @include flex-row(flex-start, center);
+  flex-wrap: wrap;
+  @media #{$max-break-small} {
+    flex-wrap: nowrap !important;
+    overflow: auto;
+  }
+  div {
+    height: 250px;
+    width: calc(100%/3);
+    overflow: hidden;
+
+    align-items: center;
+    background-color: #666;
+    color: #999;
+    display: flex;
+    justify-content: center;
+
+    @media #{$max-break-medium} {
+      min-width: calc(100%/2);
+      height: 200px;
+    }
+    @media #{$max-break-small} {
+      min-width: 90%;
+      height: 200px;
+    }
+    img {
+      height: auto;
+      width: 100%;
+
+      @media #{$min-break-medium} {
+        transition: transform .5s ease;
+      }
+
+      @media #{$min-break-large} {
+        min-width: 400px !important;
+        height: auto;
+      }
+
+      &:hover {
+        @media #{$min-break-medium} {
+          transform: scale(1.5);
+        }
+      }
+
+    }
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// .img-hover-zoom {
+//   transition: transform .5s ease;
+// }
+//
+// .img-hover-zoom:hover {
+//   transform: scale(1.5);
+// }
+
+
+
+
+
+/* [2] Transition property for smooth transformation of images */
+// .img-hover-zoom img {
+//   transition: transform .5s ease;
+// }
+//
+// /* [3] Finally, transforming the image when container gets hovered */
+// .img-hover-zoom:hover img {
+//   transform: scale(1.5);
+// }
+//
+
+// #slider {
+//   background: purple;
+//   height: 700px;
+//   overflow: hidden;
+//   image-slider {
+//     @include flex-column(center,center);
+//   }
+//   img {
+//     width: 60%;
+//     height: auto;
+//   }
+// }
+// .fade-enter-active, .fade-leave-active {
+//   transition: all 0.8s ease;
+//   overflow: hidden;
+//   visibility: visible;
+//   opacity: 1;
+//   position: absolute;
+// }
+// .fade-enter, .fade-leave-to {
+//   opacity: 0;
+//   visibility: hidden;
+// }
+//
+//   .carousel {
+//     align-items: center;
+//     background-color: #666;
+//     color: #999;
+//     display: flex;
+//     font-size: 1.5rem;
+//     justify-content: center;
+//     min-height: 10rem;
+//   }
+
+
+#app {
+  @media #{$min-break-medium} {
+    display: none;
+  }
+  background: white;
+
+	@include flex-row(space-between, flex-start);
+  padding: 1em;
+  .brand {
+    font-size: 1.1em;
+    margin: 0;
+  }
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  background-color: rgba(255, 255, 255, 0.95);
+  display: table;
+  transition: opacity .3s ease;
+  padding-bottom: 3em;
+
+  @include flex-column(center, center);
+
+  .icon {
+    width: 100%;
+    @include flex-row(flex-end, center);
+    i {
+      margin: 1em;
+    }
+  }
+
+  .nav {
+    @include flex-column(center, center);
+    a {
+      width: 100%;
+      margin: 1.5em auto;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      text-align: center;
+      font-weight: bold;
+
+      @include hyperlink(black);
+      &:hover {
+        color: orange;
+      }
+
+
+    }
+  }
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}

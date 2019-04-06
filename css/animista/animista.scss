@@ -1,0 +1,91 @@
+// custom mixins
+
+// $duration & $delay variables in seconds. e.g. text-focus-in(3s, 5s) $iteration = unit
+@mixin text-focus-in($duration, $delay) {
+	-webkit-animation: text-focus-in $duration cubic-bezier(0.550, 0.085, 0.680, 0.530) $delay both;
+	animation: text-focus-in $duration cubic-bezier(0.550, 0.085, 0.680, 0.530) $delay both;
+}
+
+@mixin fade-in-fwd($duration, $delay) {
+	-webkit-animation: fade-in-fwd $duration cubic-bezier(0.390, 0.575, 0.565, 1.000) $delay both;
+	animation: fade-in-fwd $duration cubic-bezier(0.390, 0.575, 0.565, 1.000) $delay both;
+}
+
+@mixin fade-in-text($duration, $delay) {
+	-webkit-animation: fade-in $duration cubic-bezier(0.390, 0.575, 0.565, 1.000) $delay both;
+	animation: fade-in $duration cubic-bezier(0.390, 0.575, 0.565, 1.000) $delay both;
+}
+
+@mixin bounce-top($duration, $iteration) {
+	-webkit-animation: bounce-top $duration $iteration both;
+	animation: bounce-top $duration $iteration both;
+}
+
+@mixin slide-in-right($duration, $delay) {
+	-webkit-animation: slide-in-right $duration cubic-bezier(0.250, 0.460, 0.450, 0.940)$delay both;
+				animation: slide-in-right $duration cubic-bezier(0.250, 0.460, 0.450, 0.940) $delay both;
+}
+
+@mixin tracking-in-expand-fwd($duration, $delay) {
+	-webkit-animation: tracking-in-expand-fwd $duration cubic-bezier(0.215, 0.610, 0.355, 1.000) $delay both;
+				animation: tracking-in-expand-fwd 1.4s cubic-bezier(0.215, 0.610, 0.355, 1.000) $delay both;
+
+}
+
+@mixin slide-in-left($duration, $delay) {
+	-webkit-animation: slide-in-left $duration cubic-bezier(0.250, 0.460, 0.450, 0.940) $delay both;
+	        animation: slide-in-left $duration cubic-bezier(0.250, 0.460, 0.450, 0.940) $delay both;
+}
+
+@mixin slide-in-fwd-bottom($duration)  {
+	-webkit-animation: slide-in-fwd-bottom $duration cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-bottom $duration cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+
+// animate properties
+
+#banner {
+	.tracking-in-expand-fwd {
+		@include tracking-in-expand-fwd(3s, 0.5s);
+	}
+}
+
+#menu {
+	.bounce-top {
+		@include bounce-top(1.2s, 3);
+	}
+	.text-focus-in {
+		@include text-focus-in(1s, 0.5s);
+	}
+	.slide-in-right {
+		@include slide-in-right(2s, 0.5s);
+	}
+	.slide-in-left {
+		@include slide-in-left(2s, 0.5s);
+	}
+}
+
+#about {
+	.text-focus-in {
+		@include text-focus-in(4s, 0.75s);
+	}
+	.fade-in-fwd {
+		@include fade-in-fwd(3.5s, 1.1s);
+	}
+	.fade-in-text {
+		@include fade-in-text(3s, 0.9s);
+	}
+	.slide-in-right {
+		@include slide-in-right(2.5s, 0.25s);
+	}
+}
+
+#contact {
+	.text-focus-in {
+		@include text-focus-in(4s, 0.1s);
+	}
+	.slide-in-fwd-bottom {
+		@include slide-in-fwd-bottom(2s);
+	}
+}

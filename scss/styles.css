@@ -1,0 +1,574 @@
+/* fonts */
+@import url("https://fonts.googleapis.com/css?family=Special+Elite");
+@import url("https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600,700,800,900");
+/* custom variables */
+/* custom mixins */
+/* properties */
+.img-fluid {
+  width: 100%;
+  height: auto;
+}
+
+.d-flex {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+/* ------- fonts  ------------------------------------------ */
+.brand {
+  font-family: "Special Elite", cursive;
+  color: #c23616;
+  text-transform: uppercase;
+}
+
+h2 {
+  font-size: 3em;
+  text-transform: uppercase;
+  margin: 0;
+  font-family: "Special Elite", cursive;
+}
+
+a {
+  /* a href styles formatting */
+  text-decoration: none;
+  color: pink;
+}
+a:hover {
+  color: #61b690;
+}
+
+.my-3 {
+  margin: auto 3em;
+}
+
+/* ------- header  ------------------------------------------ */
+@media only screen and (max-width: 577px) {
+  header {
+    display: none;
+  }
+}
+header nav {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0.5em;
+}
+@media only screen and (max-width: 577px) {
+  header nav {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+  }
+}
+header nav h1 {
+  margin: 0;
+  font-size: 2em;
+}
+@media only screen and (max-width: 577px) {
+  header nav h1 {
+    font-size: 1.1em;
+  }
+}
+header nav div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+header nav div a {
+  /* a href styles formatting */
+  text-decoration: none;
+  color: black;
+  padding: 0 1em;
+  font-family: "Montserrat", sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: 600;
+}
+
+/* ------- main  ------------------------------------------ */
+/* ------- #banner  ------- */
+#banner {
+  color: white;
+  text-align: center;
+}
+#banner div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  /* background images */
+  background-image: url("../img/banner-cover.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  min-height: 500px;
+}
+#banner div aside {
+  background-color: rgba(54, 25, 0, 0.8);
+  min-height: 500px;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+#banner div h1 {
+  font-size: 6em;
+  text-shadow: 0px 2px 2px #000000;
+  margin: 0;
+}
+@media only screen and (min-width: 577px) {
+  #banner div h1 {
+    font-size: 8em;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #banner div h1 {
+    font-size: 10em;
+  }
+}
+#banner div p {
+  font-family: "Special Elite", cursive;
+  font-size: 3em;
+  margin: 0;
+  font-weight: bold;
+  color: #ff793f;
+  text-shadow: 0px 2px 2px #000000;
+}
+
+/* ------- #about  ------- */
+#about div {
+  margin: 4em 0;
+}
+#about div div {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin: 2em auto;
+  text-align: center;
+}
+@media only screen and (min-width: 577px) {
+  #about div div {
+    display: flex;
+    flex-direction: column;
+    align-items: space-around;
+    justify-content: center;
+  }
+}
+#about div div h2 {
+  margin: 0;
+}
+#about div div p {
+  margin: 0;
+  font-family: "Montserrat", sans-serif;
+}
+#about div div img {
+  max-width: 250px;
+  max-height: auto;
+}
+#about .border-title {
+  background: #874000;
+  z-index: -5;
+  height: 1em;
+  width: 300px;
+  position: relative;
+  bottom: 55px;
+}
+#about .border-image {
+  border: 15px solid #874000;
+  padding: 2em;
+  z-index: -100;
+}
+
+/* ------- #carousel  ------- */
+@media only screen and (min-width: 900px) {
+  #carousel {
+    width: 80%;
+    margin: 5em auto;
+  }
+}
+
+/* ------- #menu  ------- */
+#menu {
+  background-color: #DDF1D8;
+  padding: 2em 0;
+  /* -- dietary_restrictions -- */
+  /* -- icon : gluten free & vegan -- */
+  /* -- icon : spicy -- */
+  /* -- icon : alcohol -- */
+  /* -- list of meals and drinks -- */
+}
+#menu .main-title {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  padding: 1em 0;
+}
+#menu .main-title i {
+  margin-right: 0.5em;
+}
+#menu h2 {
+  font-size: 7em;
+}
+@media only screen and (max-width: 577px) {
+  #menu h2 {
+    font-size: 5.5em;
+  }
+}
+#menu aside {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+  background-color: #C7E2C1;
+  padding: 3em 2em;
+  margin-bottom: 2em;
+}
+@media only screen and (max-width: 577px) {
+  #menu aside {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+  }
+}
+#menu aside .dietary_restriction {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+}
+#menu aside .dietary_restriction i {
+  color: red;
+}
+#menu aside .dietary_restriction p {
+  margin: 0 1em;
+  text-transform: uppercase;
+  font-weight: 800;
+  font-size: 11px;
+}
+#menu aside .dietary_restriction:nth-child(2) {
+  padding: 0 1em;
+  border-left: 2px solid black;
+  border-right: 2px solid black;
+}
+#menu #circle {
+  width: 20px;
+  height: 20px;
+  -webkit-border-radius: 25px;
+  -moz-border-radius: 25px;
+  border-radius: 25px;
+  background: blue;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin: 0 5px;
+}
+#menu #circle p {
+  text-align: center;
+  font-size: 10px;
+  font-weight: 900;
+  color: white;
+  width: 100%;
+}
+#menu .fas.fa-fire {
+  color: red;
+  margin: 0 10px;
+}
+#menu .fas.fa-asterisk {
+  color: green;
+}
+#menu table th {
+  padding-top: 2em;
+}
+#menu table th h3 {
+  font-family: "Special Elite", cursive;
+  font-size: 1.5em;
+  text-align: left;
+  text-transform: uppercase;
+  padding-bottom: 1em;
+  border-bottom: 3px solid darkgrey;
+  max-width: 250px;
+}
+#menu table td {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#menu table td .title {
+  font-weight: 600;
+}
+#menu table td .text {
+  font-size: 16px;
+}
+#menu table td p {
+  margin: 0.5em 1em;
+}
+#menu #drinks_disclaimer {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+}
+#menu #drinks_disclaimer p {
+  font-size: 14px;
+  margin-left: 10px;
+}
+
+.tilt-right {
+  transform: rotate(5deg);
+  position: absolute;
+  bottom: 50px;
+}
+
+.graphic-title {
+  border: 6px solid #000;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+  color: #000;
+  line-height: 100%;
+  position: relative;
+  transition: all .5s ease;
+  transition-delay: 1s;
+}
+
+/* ------- #contact  ------- */
+#contact {
+  background: #F7F8BC;
+  padding: 5em 0;
+}
+#contact h2 {
+  padding: 1em 0.5em;
+  color: black;
+  font-size: 3em;
+  line-height: 0.9em;
+  font-weight: 400;
+}
+#contact iframe {
+  margin: 3em 0;
+}
+#contact table td:nth-child(2) {
+  width: 90%;
+}
+#contact table th h4, #contact table td h4, #contact table tr h4 {
+  text-align: left;
+  padding: 1.5em 0;
+  border-bottom: 2px solid grey;
+  width: 30%;
+}
+#contact table th p, #contact table td p, #contact table tr p {
+  margin: 0.5em;
+}
+#contact table th h4, #contact table th p, #contact table td h4, #contact table td p, #contact table tr h4, #contact table tr p {
+  font-size: 0.9em;
+}
+
+/* ------- footer  ------------------------------------------ */
+footer {
+  background-color: #F0F7F4;
+  color: #32292F;
+  font-family: "Montserrat", sans-serif;
+  padding: 1em 0;
+}
+footer section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media only screen and (max-width: 577px) {
+  footer section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+footer section div {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+@media only screen and (max-width: 577px) {
+  footer section div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+  }
+}
+footer section .social {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: flex-start;
+}
+footer section a {
+  font-family: "Montserrat", sans-serif;
+  color: #32292F;
+  margin: 0 1em;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: bold;
+}
+@media only screen and (max-width: 577px) {
+  footer section a {
+    margin: 2em 0;
+  }
+}
+@media only screen and (max-width: 577px) {
+  footer section a i {
+    margin: 0.5em 30px;
+  }
+}
+
+#gallery {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-start;
+  align-items: center;
+  flex-wrap: wrap;
+}
+@media only screen and (max-width: 577px) {
+  #gallery {
+    flex-wrap: nowrap !important;
+    overflow: auto;
+  }
+}
+#gallery div {
+  height: 250px;
+  width: calc(100%/3);
+  overflow: hidden;
+  align-items: center;
+  background-color: #666;
+  color: #999;
+  display: flex;
+  justify-content: center;
+}
+@media only screen and (max-width: 899px) {
+  #gallery div {
+    min-width: calc(100%/2);
+    height: 200px;
+  }
+}
+@media only screen and (max-width: 577px) {
+  #gallery div {
+    min-width: 90%;
+    height: 200px;
+  }
+}
+#gallery div img {
+  height: auto;
+  width: 100%;
+}
+@media only screen and (min-width: 577px) {
+  #gallery div img {
+    transition: transform .5s ease;
+  }
+}
+@media only screen and (min-width: 900px) {
+  #gallery div img {
+    min-width: 400px !important;
+    height: auto;
+  }
+}
+@media only screen and (min-width: 577px) {
+  #gallery div img:hover {
+    transform: scale(1.5);
+  }
+}
+
+/* [2] Transition property for smooth transformation of images */
+#app {
+  background: white;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding: 1em;
+}
+@media only screen and (min-width: 577px) {
+  #app {
+    display: none;
+  }
+}
+#app .brand {
+  font-size: 1.1em;
+  margin: 0;
+}
+
+.modal-mask {
+  position: fixed;
+  z-index: 9998;
+  top: 0;
+  left: 0;
+  width: 100%;
+  /* height: 100%; */
+  background-color: rgba(255, 255, 255, 0.95);
+  display: table;
+  transition: opacity .3s ease;
+  padding-bottom: 3em;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-mask .icon {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  align-items: center;
+}
+.modal-mask .icon i {
+  margin: 1em;
+}
+.modal-mask .nav {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+}
+.modal-mask .nav a {
+  width: 100%;
+  margin: 1.5em auto;
+  text-transform: uppercase;
+  letter-spacing: 2px;
+  text-align: center;
+  font-weight: bold;
+  /* a href styles formatting */
+  text-decoration: none;
+  color: black;
+}
+.modal-mask .nav a:hover {
+  color: orange;
+}
+
+.modal-enter {
+  opacity: 0;
+}
+
+.modal-leave-active {
+  opacity: 0;
+}
+
+.modal-enter .modal-container,
+.modal-leave-active .modal-container {
+  -webkit-transform: scale(1.1);
+  transform: scale(1.1);
+}
+
+/*# sourceMappingURL=styles.css.map */
